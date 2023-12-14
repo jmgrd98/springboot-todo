@@ -15,7 +15,7 @@ public class Todo implements Serializable {
     private String title;
     private String description;
 
-    private boolean completed;
+    private boolean isCompleted;
 
     private String imgUrl;
 
@@ -25,7 +25,6 @@ public class Todo implements Serializable {
     public Todo(String title, String description, String imgUrl) {
         this.title = title;
         this.description = description;
-        this.completed = false;
         this.imgUrl = imgUrl;
     }
 
@@ -54,11 +53,11 @@ public class Todo implements Serializable {
     }
 
     public boolean getIsCompleted() {
-        return this.completed;
+        return this.isCompleted;
     }
 
-    public void setCompleted(boolean completed) {
-        this.completed = completed;
+    public void setIsCompleted(boolean completed) {
+        this.isCompleted = completed;
     }
 
     public String getImgUrl() {
