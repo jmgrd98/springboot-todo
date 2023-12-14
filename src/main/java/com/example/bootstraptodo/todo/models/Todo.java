@@ -1,8 +1,6 @@
 package com.example.bootstraptodo.todo.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 
@@ -11,11 +9,15 @@ import java.io.Serializable;
 public class Todo implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false, updatable = false)
     private Long id;
     private String title;
     private String description;
 
     private Boolean isCompleted;
+
+    private String imgUrl;
 
     public Todo() {
     }
@@ -56,5 +58,13 @@ public class Todo implements Serializable {
 
     public void setIsCompleted(Boolean isCompleted) {
         this.isCompleted = isCompleted;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 }
