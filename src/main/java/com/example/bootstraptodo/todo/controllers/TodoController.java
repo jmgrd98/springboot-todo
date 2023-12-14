@@ -24,7 +24,7 @@ public class TodoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Todo> getTodoById(@PathVariable("Id"), Long id) {
+    public ResponseEntity<Todo> getTodoById(@PathVariable("id") Long id) {
         Todo todo = todoService.findTodoById(id);
         return new ResponseEntity<Todo>(todo, HttpStatus.OK);
     }
@@ -32,7 +32,7 @@ public class TodoController {
     @PostMapping
     public ResponseEntity<Todo> addTodo(@RequestBody Todo todo) {
         Todo newTodo = todoService.addTodo(todo);
-        return new ResponseEntity<>(newTodo, HttpStatus.CREATED);
+        return new ResponseEntity<Todo>(newTodo, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")

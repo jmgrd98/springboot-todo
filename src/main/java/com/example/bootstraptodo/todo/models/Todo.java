@@ -15,17 +15,18 @@ public class Todo implements Serializable {
     private String title;
     private String description;
 
-    private Boolean isCompleted;
+    private boolean completed;
 
     private String imgUrl;
 
     public Todo() {
     }
 
-    public Todo(String title, String description) {
+    public Todo(String title, String description, String imgUrl) {
         this.title = title;
         this.description = description;
-        this.isCompleted = false;
+        this.completed = false;
+        this.imgUrl = imgUrl;
     }
 
     public Long getId() {
@@ -52,12 +53,12 @@ public class Todo implements Serializable {
         this.description = description;
     }
 
-    public Boolean getIsCompleted() {
-        return this.isCompleted;
+    public boolean getIsCompleted() {
+        return this.completed;
     }
 
-    public void setIsCompleted(Boolean isCompleted) {
-        this.isCompleted = isCompleted;
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
     }
 
     public String getImgUrl() {
