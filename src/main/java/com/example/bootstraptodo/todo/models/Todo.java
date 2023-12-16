@@ -12,7 +12,6 @@ public class Todo implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, updatable = false)
     private Long id;
-    private String title;
     private String description;
 
     private boolean isCompleted;
@@ -22,8 +21,7 @@ public class Todo implements Serializable {
     public Todo() {
     }
 
-    public Todo(String title, String description, String imgUrl) {
-        this.title = title;
+    public Todo(String description, String imgUrl) {
         this.description = description;
         this.imgUrl = imgUrl;
     }
@@ -34,14 +32,6 @@ public class Todo implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public String getDescription() {
