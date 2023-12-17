@@ -21,8 +21,9 @@ public class Todo implements Serializable {
     public Todo() {
     }
 
-    public Todo(String description, String imgUrl) {
+    public Todo(String description, String imgUrl, boolean isCompleted) {
         this.description = description;
+        this.isCompleted = isCompleted;
         this.imgUrl = imgUrl;
     }
 
